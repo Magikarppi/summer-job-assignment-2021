@@ -1,6 +1,6 @@
-export type Product = 'gloves' | 'facemasks' | 'beanies';
+export type ProductChoice = 'gloves' | 'facemasks' | 'beanies';
 
-export interface GloveType {
+export interface ProductType {
   id: string;
   type: string;
   name: string;

@@ -1,14 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div>
-      <nav>
-        <span>gloves</span>
-        <span>beanies</span>
-        <span>facemasks</span>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/products/gloves">Gloves</Link>
+        </li>
+        <li>
+          <Link to="/products/facemasks">Facemasks</Link>
+        </li>
+        <li>
+          <Link to="/products/beanies">Beanies</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

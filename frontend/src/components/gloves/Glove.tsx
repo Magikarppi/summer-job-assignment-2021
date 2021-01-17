@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { GloveType } from '../types';
-import Card from './Card';
+import { ProductType } from '../../types';
+import Card from '../Card';
 
-const Glove: FC<{ glove: GloveType }> = ({ glove }) => {
+const Glove: FC<{ glove: ProductType }> = ({ glove }) => {
   return (
     <Card>
       <h2>{glove.name}</h2>
