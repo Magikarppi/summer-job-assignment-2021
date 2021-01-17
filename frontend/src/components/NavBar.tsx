@@ -1,18 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav>
-      <ul>
+      <ul className="nav-links">
         <li>
-          <Link to="/products/gloves">Gloves</Link>
+          <NavLink to="/products/gloves" activeStyle={{ fontWeight: 'bold' }}>
+            Gloves
+          </NavLink>
         </li>
         <li>
-          <Link to="/products/facemasks">Facemasks</Link>
+          <NavLink
+            to="/products/facemasks"
+            activeStyle={{ fontWeight: 'bold' }}
+          >
+            Facemasks
+          </NavLink>
         </li>
         <li>
-          <Link to="/products/beanies">Beanies</Link>
+          <NavLink to="/products/beanies" activeStyle={{ fontWeight: 'bold' }}>
+            Beanies
+          </NavLink>
         </li>
       </ul>
     </nav>

@@ -7,15 +7,15 @@ const Facemasks: FC = () => {
   const [facemasks, setFacemasks] = useState<ProductType[]>([]);
 
   useEffect(() => {
-    const fetchGloves = async () => {
+    const getFacemasks = async () => {
       try {
-        const fetchedGloves = await getProducts('facemasks');
-        setFacemasks(fetchedGloves);
+        const fetchedMasks = await getProducts('facemasks');
+        setFacemasks(fetchedMasks);
       } catch (error) {
         console.log(error);
       }
     };
-    fetchGloves();
+    getFacemasks();
   }, []);
   return facemasks.length > 1 ? (
     <>

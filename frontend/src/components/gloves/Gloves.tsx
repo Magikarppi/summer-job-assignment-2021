@@ -7,15 +7,16 @@ const Gloves: FC = () => {
   const [gloves, setGloves] = useState<ProductType[]>([]);
 
   useEffect(() => {
-    const fetchGloves = async () => {
+    const getGloves = async () => {
       try {
         const fetchedGloves = await getProducts('gloves');
         setGloves(fetchedGloves);
       } catch (error) {
         console.log(error);
+        //check if error gets up here from getprods
       }
     };
-    // const fetchGloves = async () => {
+    // const getGloves = async () => {
     //   try {
     //     const fetchedGloves = await getProducts('gloves');
     //     const sortedGloves = fetchedGloves.sort(
@@ -35,8 +36,9 @@ const Gloves: FC = () => {
     //     console.log(error);
     //     return;
     //   }
-    fetchGloves();
+    getGloves();
   }, []);
+
   return gloves.length > 1 ? (
     <>
       <h1>Gloves</h1>

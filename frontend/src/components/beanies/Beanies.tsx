@@ -7,15 +7,15 @@ const Beanies: FC = () => {
   const [beanies, setBeanies] = useState<ProductType[]>([]);
 
   useEffect(() => {
-    const fetchGloves = async () => {
+    const fetchBeanies = async () => {
       try {
-        const fetchedGloves = await getProducts('beanies');
-        setBeanies(fetchedGloves);
+        const fetchedBeanies = await getProducts('beanies');
+        setBeanies(fetchedBeanies);
       } catch (error) {
         console.log(error);
       }
     };
-    fetchGloves();
+    fetchBeanies();
   }, []);
   return beanies.length > 1 ? (
     <>
