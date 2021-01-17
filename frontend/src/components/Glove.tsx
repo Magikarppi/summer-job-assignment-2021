@@ -1,14 +1,19 @@
 import React, { FC } from 'react';
 import { GloveType } from '../types';
+import Card from './Card';
 
 const Glove: FC<{ glove: GloveType }> = ({ glove }) => {
   return (
-    <div>
-      <p>{glove.name}</p>
-      <p>{glove.type}</p>
-      <p>{glove.name}</p>
-      <p>{glove.price}</p>
-    </div>
+    <Card>
+      <h2>{glove.name}</h2>
+      <p id="productID">{glove.id}</p>
+      <p>Price: {glove.price}</p>
+      <span>colors: </span>
+      {glove.color.map((c) => (
+        <span key={c}>{` ${c}`}</span>
+      ))}
+      <p>Manufacturer: {glove.manufacturer}</p>
+    </Card>
   );
 };
 

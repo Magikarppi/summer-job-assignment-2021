@@ -10,7 +10,18 @@ const Gloves: FC = () => {
     const fetchGloves = async () => {
       try {
         const fetchedGloves = await getProducts('gloves');
-        setGloves(fetchedGloves);
+        const sortedGloves = fetchedGloves.sort(
+          (a: GloveType, b: GloveType) => {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return +1;
+            }
+            return 0;
+          }
+        );
+        setGloves(sortedGloves);
         return;
       } catch (error) {
         console.log(error);
@@ -20,11 +31,14 @@ const Gloves: FC = () => {
     fetchGloves();
   }, []);
   return gloves.length > 1 ? (
-    <div>
-      {gloves.map((glove: GloveType) => (
-        <Glove glove={glove} />
-      ))}
-    </div>
+    <>
+      <h1>Gloves</h1>
+      <div id="grid">
+        {gloves.map((glove: GloveType) => (
+          <Glove key={glove.id} glove={glove} />
+        ))}
+      </div>
+    </>
   ) : (
     <div>loading</div>
   );
