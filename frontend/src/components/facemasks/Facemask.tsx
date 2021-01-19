@@ -13,13 +13,18 @@ const Facemask: FC<{ facemask: ProductType }> = ({ facemask }) => {
           facemask.manufacturer
         );
 
-        // add logic
+        console.log('fetcheddata', fetchedAvailability);
 
         setAvailability(fetchedAvailability);
       } catch (error) {}
     };
     runGetAvailability();
   }, [facemask.manufacturer]);
+
+  // const filterAv = (mask: ProductType) => {
+  //   const a = availability.find(item => item.id === mask.id);
+  //   set
+  // }
   return (
     <Card>
       <h2>{facemask.name}</h2>

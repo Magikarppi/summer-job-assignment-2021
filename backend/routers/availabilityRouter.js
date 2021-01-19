@@ -9,8 +9,7 @@ availabilityRouter.get('/:manufacturer', async (req, res) => {
     const manufacturer = req.params.manufacturer;
     const fetch_res = await fetch(API_PRODUCTS_BASE_URL + manufacturer);
     const jsonData = await fetch_res.json();
-    console.log('jsondata', jsonData);
-    res.json(jsonData);
+    res.status(200).send(jsonData.response);
   } catch (error) {
     console.log(error);
     response.status(400).send({ error: error.message });

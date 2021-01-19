@@ -1,8 +1,12 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import { AvailabilityContext } from '../../context/availabilityContext';
 import { ProductType } from '../../types';
 import Card from '../Card';
 
 const Glove: FC<{ glove: ProductType }> = ({ glove }) => {
+  const state = useContext(AvailabilityContext);
+  // const g = state.hennex;
+  // console.log('g', g);
   return (
     <Card>
       <h2>{glove.name}</h2>

@@ -8,7 +8,12 @@ export interface ProductType {
   manufacturer: string;
 }
 
-export interface ManufacturerType {
+// export interface AvailabilityType {
+//   id: string;
+//   DATAPAYLOAD: string;
+// }
+
+export interface AvailabilityType {
   id: string;
-  DATAPAYLOAD: string;
+  inStockValue: string;
 }

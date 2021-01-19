@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AvailabilityProvider from './context/availabilityContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AvailabilityProvider>
+      <App />
+    </AvailabilityProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -17,7 +17,7 @@ app.use(morgan(loggerFormat));
 app.use(cors());
 
 app.use('/api/products', productsRouter);
-app.use('api/availability', availabilityRouter);
+app.use('/api/availability', availabilityRouter);
 
 app.listen(port, (err) => {
   if (err) {
